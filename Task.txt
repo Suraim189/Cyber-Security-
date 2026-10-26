@@ -1,0 +1,617 @@
+PROJECT: NTU Cyber Security Society — Official Website
+
+1. Your Mission
+
+Act as an award-winning web designer, creative director, senior Next.js engineer, UI/UX specialist, and security-conscious full-stack architect.
+
+Design and build the official website for the Cyber Security Society at National Textile University (NTU), Faisalabad, Pakistan.
+
+The objective is to create a distinctive, premium, production-ready university society website that feels deliberately designed by an experienced professional team.
+
+This must NOT look like a typical AI-generated landing page, a generic SaaS template, or a university assignment.
+
+Build a complete, responsive, multi-page website with a functional, secure admin panel, real Supabase integration, image storage, and a deployment-ready Vercel configuration.
+
+You have creative freedom to make high-quality design and technical decisions. Do not ask for approval for every minor implementation decision. Use sensible defaults, but never invent official university information, society achievements, member identities, or contact details.
+
+2. Project Identity
+
+- University: National Textile University (NTU), Faisalabad, Pakistan.
+- Organization: Cyber Security Society.
+- Design direction: Clean light, premium editorial, modern academic technology.
+- Primary users: Students, faculty, prospective members, alumni, and cybersecurity professionals.
+- Frontend: Next.js App Router, TypeScript, and Tailwind CSS.
+- Backend services: Supabase.
+- Image and media storage: Supabase Storage.
+- Database: Supabase PostgreSQL.
+- Admin authentication: Supabase Auth.
+- Hosting: Vercel.
+- Reference: Use the attached screen recording of the university society website to understand its sections and information architecture.
+
+Use the reference as inspiration for content structure, especially the leadership team, executive body, member profiles, and society introduction. Create an original visual identity and composition rather than copying the reference.
+
+3. Art Direction: Clean Light, Premium, Professional
+
+The website must use a light visual theme as its primary identity.
+
+Think of a professionally art-directed university technology organization, a premium research publication, and a modern cybersecurity community.
+
+Color palette
+
+Start with a restrained palette:
+
+- Primary background: warm white or a very subtle neutral.
+- Secondary surfaces: soft gray or off-white.
+- Primary text: deep charcoal or ink navy.
+- Accent: sophisticated blue or restrained electric blue.
+- Supporting colors: muted slate and accessible neutral borders.
+
+Use color consistently through design tokens. Refine the palette to create a distinctive identity.
+
+Do not make every section white. Establish visual rhythm through alternating backgrounds, full-width photography, editorial layouts, typography, and occasional dark contrast sections.
+
+Typography
+
+Choose a refined, highly readable type system.
+
+Use:
+
+- Strong editorial headings.
+- Comfortable body text.
+- Clear hierarchy between page titles, section titles, labels, and supporting copy.
+- Restrained font weights.
+- Appropriate line lengths and whitespace.
+
+Use a professional font pairing or a carefully selected single type family. Load fonts efficiently and avoid layout shifts.
+
+Layout
+
+Create a deliberate grid with:
+
+- Consistent page gutters.
+- Generous but controlled whitespace.
+- Clear alignment.
+- Varied section compositions.
+- Large, well-cropped photography.
+- Carefully sized content containers.
+- Balanced proportions between text and images.
+
+Avoid making every section a centered heading followed by three identical cards.
+
+Strict anti-AI design rules
+
+Do not use:
+
+- Purple gradients or neon backgrounds by default.
+- Glassmorphism everywhere.
+- Random decorative blobs.
+- Excessive glowing effects.
+- Repeated rounded cards for every content type.
+- Generic stock illustrations of hooded hackers.
+- Fake terminal animations.
+- Matrix-rain backgrounds.
+- Unnecessary floating elements.
+- Oversized headings without meaningful content.
+- Excessive scroll-triggered animation.
+- Emoji as professional interface icons.
+- Fabricated testimonials or fake counters.
+
+The design must derive its character from composition, typography, photography, spacing, and content—not visual gimmicks.
+
+Use subtle motion only where it enhances usability.
+
+4. Branding and Assets
+
+Build a flexible branding system for the university and society.
+
+Support:
+
+- Official NTU logo.
+- Cyber Security Society logo.
+- Browser favicon.
+- Social sharing image.
+- Society photography.
+- Leadership portraits.
+- Event banners and galleries.
+
+The user will upload approved images to Supabase Storage.
+
+Do not embed large images in source code or assume files already exist. Create a clear asset-upload workflow and store the appropriate storage paths or URLs in the database.
+
+If the official logos or images are not yet available:
+
+- Use tasteful temporary placeholders.
+- Make them easy to replace.
+- Never fabricate an official logo or claim that an unofficial mark is university-approved.
+
+Use the correct official university branding only when the supplied assets or verified sources establish it.
+
+5. Information Architecture
+
+Create these pages and connect them through a consistent navigation system.
+
+Page 1: Home
+
+The homepage must tell visitors what the society is, what it does, and how to participate.
+
+Navigation
+
+- Society branding
+- Home
+- About
+- Team
+- Events
+- Projects & Research
+- Resources
+- Contact
+- Join the Society CTA
+
+Create a refined responsive header with an accessible mobile menu and appropriate active states.
+
+Hero section
+
+Create a visually exceptional first screen.
+
+Include:
+
+- A distinctive headline about cybersecurity, learning, and building a safer digital world.
+- A concise supporting paragraph.
+- Primary CTA: Join the Society.
+- Secondary CTA: Explore Our Activities.
+- An editorial image composition using supplied photography or a carefully designed placeholder.
+- Clear visual hierarchy and a confident, professional tone.
+
+Avoid generic copy such as “Welcome to the Future” or “Unlock the Power of Technology.”
+
+Do not invent university endorsements, official affiliations beyond the supplied project identity, or achievements.
+
+Society introduction
+
+Explain the society's purpose, its educational role, and the opportunities it offers students.
+
+Focus areas
+
+Present relevant areas such as:
+
+- Ethical Hacking and Penetration Testing
+- Application and Network Security
+- Digital Forensics
+- Security Research
+- Capture the Flag Competitions
+- Secure Software Development
+- Cybersecurity Awareness
+
+These are suggested areas, not claims about established programs. Make them editable and publish only the activities the society actually supports.
+
+Upcoming events
+
+Create a visually engaging section showing actual upcoming events.
+
+Each item can include a title, date, venue, category, image, description, and registration link.
+
+Include a graceful empty state when no events are published.
+
+Featured work
+
+Show selected projects, research, workshops, or community initiatives when verified content is available.
+
+Leadership preview
+
+Show the faculty advisor, president, and selected executive members using real approved profiles.
+
+Join the community
+
+Create a strong invitation to become involved, attend events, or submit a membership interest form.
+
+Footer
+
+Include relevant navigation, university and society branding, verified contact information, approved social links, and copyright information.
+
+Page 2: About
+
+Create an editorial, image-led page with:
+
+- Society introduction.
+- Mission and vision.
+- Core values.
+- Objectives.
+- Focus areas.
+- Activities and initiatives.
+- Faculty supervision, where confirmed.
+- History and milestones, where supplied.
+
+Do not fabricate dates, achievements, partnerships, or historical claims.
+
+Page 3: Team
+
+Build a polished society directory based on the organization structure shown in the reference video.
+
+Support:
+
+- Faculty advisor.
+- President.
+- Vice president.
+- General secretary.
+- Executive body.
+- Departmental or technical leads.
+- Volunteers and team members, when applicable.
+
+Each profile should support:
+
+- Full name.
+- Official designation.
+- Approved portrait.
+- Optional biography.
+- Optional department or academic program.
+- Optional professional social links.
+
+Establish a clear hierarchy between leadership and the wider team.
+
+Use varied but consistent layouts, with suitable portrait proportions and responsive behavior. Add filters only when they improve navigation.
+
+Do not publish fabricated people or automatically assign invented positions.
+
+Page 4: Events
+
+Create a proper events experience with:
+
+- Upcoming events.
+- Past events.
+- Event categories.
+- Search or filters where useful.
+- Event detail pages.
+- Registration links.
+- Event photography and recaps.
+
+Support publication status and registration deadlines where applicable.
+
+Use database-backed content. Never show expired events as upcoming or invent event information.
+
+Page 5: Projects & Research
+
+Create a technical portfolio for society projects and research initiatives.
+
+Each project may include:
+
+- Title.
+- Summary.
+- Detailed description.
+- Security domain.
+- Technologies used.
+- Approved team attribution.
+- Cover image.
+- GitHub or external project link.
+- Publication status.
+
+Keep the layout distinct from the events page.
+
+Do not expose confidential university systems, credentials, personal information, or exploit details that could enable unauthorized access.
+
+Page 6: Resources
+
+Organize educational content into useful categories:
+
+- Beginner cybersecurity roadmaps.
+- Official documentation.
+- Legal and authorized practice labs.
+- CTF platforms.
+- Open-source security tools.
+- Society workshop materials.
+- Security awareness resources.
+
+Use clear titles and concise explanations. Verify external links before publication.
+
+Page 7: Contact & Join
+
+Create an approachable contact and membership experience.
+
+Support:
+
+- Membership interest form.
+- General contact form, if required.
+- Official email and social links once supplied.
+- Instructions for joining.
+- Form validation and accessible error messages.
+- Loading, success, and failure states.
+
+Public forms must submit to a real backend endpoint and provide meaningful feedback. Do not pretend a form submission succeeded when it failed.
+
+Collect only necessary personal information and include a concise privacy notice.
+
+6. Secure Admin Panel
+
+Build a real admin panel that allows authorized society administrators to maintain the website without editing source code.
+
+Use a visually consistent but functional admin interface. Keep it simpler than the public-facing website.
+
+Admin features
+
+Implement content management for:
+
+- Team members.
+- Events.
+- Projects and research.
+- Educational resources.
+- Gallery images.
+- Homepage featured content.
+- Membership applications, if enabled.
+
+Provide:
+
+- Create, edit, publish, unpublish, and delete operations.
+- Image selection or upload to Supabase Storage.
+- Form validation.
+- Confirmation before destructive actions.
+- Clear success and error feedback.
+- Empty states and loading states.
+- Search and filtering for large collections.
+
+Use draft and published states where appropriate. Public pages must display only content intended for publication.
+
+Authentication and authorization
+
+Use Supabase Auth.
+
+Requirements:
+
+- Protected admin routes.
+- Server-side authorization checks.
+- A clear sign-in and sign-out experience.
+- A secure initial-admin provisioning procedure.
+- Role-based permissions if more than one administrative role is required.
+
+Never rely solely on client-side route guards.
+
+Do not expose service-role credentials in browser bundles.
+
+Never allow anonymous visitors to modify published content, profiles, events, or administrator roles.
+
+Membership applications and personal information must not be publicly readable.
+
+Use Row Level Security (RLS) policies and test both authorized and unauthorized access.
+
+Do not create a hardcoded password, fake authentication flow, or publicly accessible admin account.
+
+7. Supabase Storage Architecture
+
+Supabase Storage is the primary media storage solution.
+
+Create a documented structure for:
+
+- "branding"
+- "team"
+- "events"
+- "projects"
+- "gallery"
+
+Use public read access only for approved assets intended to be publicly visible.
+
+Use private buckets for sensitive or restricted files. Membership records and private administrative documents must not be placed in publicly readable buckets.
+
+Implement:
+
+- Upload and replacement workflows.
+- Image preview before saving where practical.
+- File type and size validation.
+- Sensible filename handling.
+- Storage path organization.
+- Cleanup of replaced or deleted assets when safe.
+- Appropriate access policies.
+- Graceful handling of missing or unavailable images.
+
+Store image paths or URLs in database records where appropriate.
+
+Use Next.js image optimization and suitable responsive sizes. Configure remote image access only for trusted sources.
+
+If no image has been uploaded, display a consistent, intentional fallback rather than a broken image.
+
+8. Database Design
+
+Create clean, typed, maintainable database schemas and SQL migrations.
+
+Suggested tables:
+
+- "profiles" or "team_members"
+- "events"
+- "projects"
+- "resources"
+- "membership_applications"
+- "site_settings", if required
+
+Use relationships, indexes, timestamps, and publication fields where appropriate.
+
+Separate administrator permissions from ordinary profile information.
+
+Implement appropriate RLS policies for each table and explain their intended access rules.
+
+Validate input on the server. Use database constraints for important data integrity requirements.
+
+Never include real credentials, private contact information, or invented production records in seed data.
+
+Provide safe development seed data only when clearly labeled and easy to remove.
+
+9. Technical Architecture
+
+Use the following preferred stack:
+
+- Next.js App Router.
+- TypeScript with strict mode.
+- Tailwind CSS.
+- Accessible, customizable UI primitives where appropriate.
+- Supabase PostgreSQL.
+- Supabase Auth.
+- Supabase Storage.
+- Vercel hosting.
+- A lightweight icon library.
+- Optional animation library only if justified.
+
+Use Server Components by default and Client Components only where interaction requires them.
+
+Organize the code into:
+
+- App routes.
+- Reusable UI components.
+- Feature-specific components.
+- Server-side data access.
+- Authentication and authorization utilities.
+- Validation schemas.
+- Shared types.
+- Styling and design tokens.
+
+Avoid unnecessary dependencies and giant components. Keep data access, UI, and business logic separate.
+
+Use current stable, mutually compatible package versions. Check current official documentation when implementing authentication, storage policies, and deployment-sensitive features.
+
+10. Visual Quality and Responsive Behavior
+
+The public website must be mobile-first without sacrificing the desktop experience.
+
+Test common phone, tablet, laptop, and desktop viewport sizes.
+
+Pay special attention to:
+
+- Header spacing and navigation.
+- Image crops.
+- Text wrapping.
+- Long names and role titles.
+- Portrait grids.
+- Event details.
+- Forms and error messages.
+- Buttons and touch targets.
+- Footer columns.
+- Horizontal overflow.
+
+Do not merely shrink desktop components to fit mobile.
+
+Establish design tokens for color, typography, spacing, content widths, borders, shadows, and responsive breakpoints.
+
+Use subtle transitions, visible keyboard focus states, accessible contrast, semantic HTML, and support for reduced-motion preferences.
+
+11. SEO, Accessibility, and Performance
+
+Implement:
+
+- Unique page titles and metadata.
+- Open Graph metadata.
+- Favicon configuration.
+- Sitemap.
+- Appropriate robots directives.
+- Canonical URLs where needed.
+- Descriptive alt text.
+- Semantic headings.
+- Keyboard accessibility.
+- Accessible forms.
+- Appropriate color contrast.
+- Responsive image optimization.
+- Loading and error states.
+- Custom 404 page.
+- Useful empty states.
+
+Avoid unnecessary JavaScript, large animation bundles, layout shifts, and oversized images.
+
+Use the official production domain for canonical URLs and sitemap configuration only after it is provided.
+
+Aim for strong Lighthouse results, but do not sacrifice design quality or accessibility to chase a score.
+
+12. Vercel Deployment
+
+Prepare the project for a reliable Vercel deployment.
+
+Provide:
+
+- A working production build.
+- Correct Next.js configuration.
+- Environment variable documentation.
+- A ".env.example" with variable names only.
+- Supabase setup instructions.
+- Database migrations.
+- Storage bucket and policy instructions.
+- Authentication configuration.
+- Required redirect and callback URL setup.
+- Vercel deployment steps.
+- A post-deployment verification checklist.
+
+Use environment variables such as:
+
+"NEXT_PUBLIC_SUPABASE_URL"
+
+"NEXT_PUBLIC_SUPABASE_ANON_KEY"
+
+Keep server-only secrets in server-only environment variables.
+
+Never commit actual secrets or place the Supabase service-role key in public variables.
+
+Ensure database and storage configuration is not dependent on local development state.
+
+13. Implementation Workflow
+
+Follow these phases autonomously.
+
+Phase A — Inspect
+
+Inspect the reference video, available files, and existing project structure. Identify the useful content patterns and the areas that should receive an original design.
+
+Phase B — Plan
+
+Establish the design system, routes, reusable components, database schema, storage architecture, authentication strategy, and deployment requirements.
+
+Phase C — Build
+
+Implement the complete public website and functional admin panel. Do not stop at the homepage or a static mockup.
+
+Phase D — Integrate
+
+Connect Supabase authentication, database operations, image storage, and public forms. Implement and verify access policies.
+
+Phase E — Refine
+
+Run the website, inspect the rendered pages, and refine typography, spacing, imagery, mobile layouts, and interactions. Remove generic or repetitive design patterns.
+
+Phase F — Test
+
+Check:
+
+- Production build.
+- TypeScript errors.
+- Broken routes and links.
+- Responsive layouts.
+- Form submissions.
+- Authentication.
+- Unauthorized admin access.
+- Database RLS policies.
+- Storage permissions.
+- Missing images.
+- Browser console errors.
+- Vercel deployment compatibility.
+
+Fix issues rather than simply documenting them.
+
+Phase G — Deliver
+
+Provide complete source code, setup commands, environment documentation, SQL migrations, asset upload instructions, administrator setup, and deployment instructions.
+
+Clearly identify any remaining configuration that requires real university information or credentials.
+
+Never claim a feature works, a security policy is enforced, or a deployment succeeded unless it has actually been verified.
+
+14. Definition of Done
+
+The project is complete when:
+
+1. The public website has a distinctive clean-light visual identity.
+2. The reference video's relevant content patterns have been considered.
+3. All required pages are implemented and connected.
+4. The layout works across mobile, tablet, and desktop.
+5. The team directory, events, projects, and resources can be maintained through the admin panel.
+6. Administrator authentication and authorization are properly enforced.
+7. Supabase Storage handles approved public images correctly.
+8. Database access policies protect private and administrative data.
+9. Forms validate and persist data correctly.
+10. Missing content produces polished empty states rather than broken layouts.
+11. No invented people, achievements, events, or contact details are presented as real.
+12. The project is ready for Vercel deployment after the required credentials and official assets are supplied.
+13. The source code is maintainable and the setup process is documented.
+
+Final creative instruction: Build this as if a respected design studio and an experienced engineering team were collaborating on the official digital presence of NTU Cyber Security Society. Prioritize thoughtful composition, real functionality, authentic content, clean engineering, and trust. The result must feel intentionally designed—not generated from a template.
+
+Start by inspecting the reference and project files, then implement the actual website. Do not stop at a plan, wireframe, or design proposal.

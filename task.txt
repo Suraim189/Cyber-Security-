@@ -1,0 +1,47 @@
+# NTU Cyber Security Society — Task Queue
+
+Primary Specification Reference: Task.txt
+Memory Root: docs/ai-memory/
+
+================================================================================
+TASKS SUMMARY
+================================================================================
+
+[T001] [HIGH] [DONE] Establish Persistent Project Memory & Agent System
+  - Acceptance Criteria: AGENTS.md, task.txt, README.md, and all 10 docs/ai-memory/*.md files created with verified repository facts.
+  - Verification: All documents created, validated, and indexed.
+
+[T002] [HIGH] [DONE] Initialize Next.js 14+ App Router Project with TypeScript & Tailwind CSS
+  - Acceptance Criteria: Next.js App Router project initialized in project root with strict TypeScript, Tailwind CSS, Lucide React icons, and modern editorial styling setup.
+  - Verification: npm install succeeded; npx tsc --noEmit passed with 0 errors; npm run build generated static & server routes.
+
+[T003] [HIGH] [DONE] Implement Core Design System, Typography & Layout Shell
+  - Acceptance Criteria: Responsive navigation header with mobile drawer, active states, official branding placeholders, and university-aligned footer with verified sections.
+  - Verification: Navbar & Footer components rendered across all pages; mobile drawer responsive; clean-light design tokens established.
+
+[T004] [HIGH] [DONE] Setup Supabase Schema, Database Migrations, & Storage Architecture
+  - Acceptance Criteria: SQL migrations for team_members, events, projects, resources, membership_applications, site_settings; RLS policies; storage bucket definitions (branding, team, events, projects, gallery).
+  - Verification: Migration file authored at supabase/migrations/20261026_init.sql.
+
+[T005] [HIGH] [DONE] Build Supabase Client/Server Integration with Graceful Local Fallback
+  - Acceptance Criteria: Server & client Supabase helpers with mock/fallback provider ensuring the website works smoothly out-of-the-box before Supabase credentials are configured.
+  - Verification: DataService supports both live Supabase client and resilient local state; tested and verified.
+
+[T006] [HIGH] [DONE] Build All Core Public Pages
+  - Acceptance Criteria:
+    - Homepage (Hero, Society Intro, Focus Areas, Events preview, Leadership preview, Featured work, Membership CTA)
+    - About Page (Mission, Vision, Objectives, History, Faculty oversight)
+    - Team Directory (Faculty Advisor, Executive Council, Leads, Members with search/filter)
+    - Events Page (Upcoming, Past, Category filters, Registration dialog/link, Detail view)
+    - Projects & Research Page (Technical portfolio, Security domains, Tech tags)
+    - Resources Page (Cybersecurity roadmaps, CTF links, Toolkits, Practice labs)
+    - Contact & Join Page (Validated interactive membership application form & contact form)
+  - Verification: All routes return HTTP 200 OK; form client validation verified.
+
+[T007] [HIGH] [DONE] Build Secure Admin Panel (/admin)
+  - Acceptance Criteria: Admin auth (Supabase Auth sign-in/out), route protection, management dashboards for Team, Events, Projects, Resources, and Applications with CRUD + image upload workflow.
+  - Verification: /admin and all sub-routes (/admin/team, /admin/events, /admin/projects, /admin/resources, /admin/applications) build and return HTTP 200 OK.
+
+[T008] [MEDIUM] [DONE] Testing, Polish, Accessibility, SEO & Vercel Deployment Readiness
+  - Acceptance Criteria: Type checks pass, production build succeeds, meta tags, sitemap, robots.txt, 404 page, .env.example, setup documentation.
+  - Verification: npx tsc --noEmit (0 errors), npm run build (successful prerender of 19 static/dynamic pages), robots.txt & sitemap.xml generated.
