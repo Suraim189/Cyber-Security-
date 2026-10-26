@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { CheckCircle2, AlertCircle, Loader2, Send } from "lucide-react";
+import { CheckCircle2, AlertCircle, Loader2, Send, Mail } from "lucide-react";
 import { DataService } from "@/lib/data-service";
 
 export function ContactForm() {
@@ -47,106 +47,110 @@ export function ContactForm() {
   };
 
   return (
-    <div className="surface-card p-6 sm:p-10 border-charcoal-200 bg-white">
+    <div className="cyber-card p-6 sm:p-8 border-cyber-border bg-cyber-850 shadow-xl">
       <div className="mb-6">
-        <h2 className="text-xl sm:text-2xl font-bold text-charcoal-900">
-          General Inquiries & Correspondence
-        </h2>
-        <p className="text-xs sm:text-sm text-charcoal-600 mt-1">
-          Have an inquiry regarding society workshops, partnerships, or events?
+        <div className="flex items-center gap-2 text-xs font-mono text-cyber-cyan mb-1">
+          <Mail className="w-4 h-4" />
+          <span>DIRECT CORRESPONDENCE</span>
+        </div>
+        <h3 className="text-xl font-bold text-white font-mono">
+          General Inquiries
+        </h3>
+        <p className="text-xs text-slate-400 mt-1">
+          Have an inquiry regarding workshops, partnerships, or academic events?
         </p>
       </div>
 
       {status === "success" ? (
-        <div className="p-5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-900 space-y-2">
+        <div className="p-5 rounded-lg bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 space-y-2 font-mono">
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-            <h4 className="font-semibold text-sm">Message Sent</h4>
+            <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+            <h4 className="font-semibold text-sm text-white">Message Transmitted</h4>
           </div>
-          <p className="text-xs text-emerald-800">
-            Thank you for contacting NTU Cyber Security Society. An executive officer will review your message.
+          <p className="text-xs text-slate-300">
+            Thank you for contacting NTU Cyber Security Society. An executive officer will review your dispatch.
           </p>
           <button
             onClick={() => setStatus("idle")}
-            className="text-xs underline text-emerald-900 font-medium pt-1"
+            className="text-xs underline text-cyber-cyan font-medium pt-1"
           >
             Send another message
           </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4 font-mono text-xs">
           {status === "error" && (
-            <div className="p-3 rounded bg-red-50 border border-red-200 text-red-800 text-xs flex items-center gap-2">
-              <AlertCircle className="w-4 h-4 text-red-600" />
+            <div className="p-3 rounded bg-rose-950/60 border border-rose-500/40 text-rose-300 flex items-center gap-2">
+              <AlertCircle className="w-4 h-4 text-rose-400" />
               <span>{errorMessage}</span>
             </div>
           )}
 
           <div>
-            <label className="block text-xs font-semibold text-charcoal-800 mb-1">
-              Your Name <span className="text-brand-600">*</span>
+            <label className="block font-semibold text-slate-300 mb-1">
+              Your Name <span className="text-cyber-cyan">*</span>
             </label>
             <input
               type="text"
               required
               value={formData.full_name}
               onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg border border-charcoal-200 bg-white text-charcoal-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500"
+              className="w-full px-3 py-2 rounded-lg border border-cyber-border bg-cyber-950 text-white focus:outline-none focus:border-cyber-cyan"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-charcoal-800 mb-1">
-              Email Address <span className="text-brand-600">*</span>
+            <label className="block font-semibold text-slate-300 mb-1">
+              Email Address <span className="text-cyber-cyan">*</span>
             </label>
             <input
               type="email"
               required
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg border border-charcoal-200 bg-white text-charcoal-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500"
+              className="w-full px-3 py-2 rounded-lg border border-cyber-border bg-cyber-950 text-white focus:outline-none focus:border-cyber-cyan"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-charcoal-800 mb-1">
+            <label className="block font-semibold text-slate-300 mb-1">
               Subject
             </label>
             <input
               type="text"
               value={formData.subject}
               onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-              placeholder="e.g. Workshop Registration Inquiry / Industry Collaboration"
-              className="w-full px-3 py-2 rounded-lg border border-charcoal-200 bg-white text-charcoal-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500"
+              placeholder="e.g. Workshop Inquiry / Partnership"
+              className="w-full px-3 py-2 rounded-lg border border-cyber-border bg-cyber-950 text-white focus:outline-none focus:border-cyber-cyan"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-charcoal-800 mb-1">
-              Message <span className="text-brand-600">*</span>
+            <label className="block font-semibold text-slate-300 mb-1">
+              Message <span className="text-cyber-cyan">*</span>
             </label>
             <textarea
               rows={4}
               required
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg border border-charcoal-200 bg-white text-charcoal-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500"
+              className="w-full px-3 py-2 rounded-lg border border-cyber-border bg-cyber-950 text-white focus:outline-none focus:border-cyber-cyan"
             />
           </div>
 
           <button
             type="submit"
             disabled={isSubmitting}
-            className="px-5 py-2.5 rounded-lg bg-charcoal-900 text-white font-medium text-xs hover:bg-brand-700 transition-colors flex items-center gap-2"
+            className="w-full px-5 py-2.5 rounded-lg bg-cyber-cyan text-cyber-950 font-bold text-xs hover:bg-cyan-300 transition-colors flex items-center justify-center gap-2"
           >
             {isSubmitting ? (
               <>
                 <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                <span>Sending...</span>
+                <span>Transmitting...</span>
               </>
             ) : (
               <>
-                <span>Send Message</span>
+                <span>Transmit Message</span>
                 <Send className="w-3.5 h-3.5" />
               </>
             )}

@@ -1,34 +1,34 @@
 import React from "react";
 import Link from "next/link";
-import { ShieldAlert, ArrowLeft, Home } from "lucide-react";
+import { ShieldAlert, ArrowLeft, Home, Terminal } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="min-h-[70vh] flex items-center justify-center px-4 bg-background">
-      <div className="surface-card max-w-md w-full p-8 text-center space-y-5 border-charcoal-200">
-        <div className="w-16 h-16 rounded-2xl bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center mx-auto shadow-sm">
+    <div className="min-h-[75vh] flex items-center justify-center px-4 bg-cyber-900 text-slate-100">
+      <div className="cyber-card max-w-md w-full p-8 text-center space-y-5 border-cyber-border bg-cyber-850">
+        <div className="w-16 h-16 rounded-2xl bg-cyber-900 border border-amber-500/40 text-amber-400 flex items-center justify-center mx-auto shadow-md">
           <ShieldAlert className="w-8 h-8 stroke-[1.8]" />
         </div>
 
         <div className="space-y-2">
-          <span className="text-xs font-mono font-semibold text-brand-700 uppercase tracking-widest">
-            HTTP 404 — Not Found
+          <span className="text-xs font-mono font-semibold text-cyber-cyan uppercase tracking-widest">
+            HTTP 404 // ROUTE NOT FOUND
           </span>
-          <h1 className="text-2xl font-bold text-charcoal-900">
-            Page Does Not Exist
+          <h1 className="text-2xl font-bold text-white font-mono">
+            Endpoint Non-Existent
           </h1>
-          <p className="text-xs text-charcoal-600 leading-relaxed">
-            The requested university resource or endpoint could not be found or has been relocated.
+          <p className="text-xs text-slate-400 leading-relaxed">
+            The requested university resource or network endpoint could not be mapped to an active socket.
           </p>
         </div>
 
-        <div className="pt-4 border-t border-charcoal-100 flex items-center justify-center gap-3">
+        <div className="pt-4 border-t border-cyber-border flex items-center justify-center gap-3">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-charcoal-900 text-white text-xs font-medium hover:bg-brand-700 transition-colors"
+            className="btn-cyber-cyan text-xs font-mono font-bold"
           >
             <Home className="w-3.5 h-3.5" />
-            <span>Return Home</span>
+            <span>Return to Command Center</span>
           </Link>
         </div>
       </div>

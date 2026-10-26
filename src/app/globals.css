@@ -13,78 +13,131 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #050811;
+    font-size: 16px;
   }
 
   body {
-    @apply bg-background text-foreground antialiased font-sans selection:bg-brand-100 selection:text-brand-900;
+    @apply bg-background text-slate-200 antialiased font-sans selection:bg-cyber-cyan/25 selection:text-cyber-cyan text-base leading-relaxed;
     min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight font-bold text-navy-900;
+    @apply tracking-tight font-bold text-white;
   }
 
   p {
-    @apply text-slate-500 leading-relaxed;
+    @apply text-slate-300 leading-relaxed text-base;
   }
 
-  /* Accessible focus states */
+  /* Accessible high-contrast focus states */
   *:focus-visible {
-    @apply outline-none ring-2 ring-brand-600/40 ring-offset-2 ring-offset-white;
+    @apply outline-none ring-2 ring-cyber-cyan/70 ring-offset-2 ring-offset-cyber-900;
   }
 }
 
-/* Subtle architectural patterns */
-.editorial-grid {
-  background-size: 32px 32px;
-  background-image: 
-    linear-gradient(to right, rgba(23, 29, 46, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(23, 29, 46, 0.04) 1px, transparent 1px);
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
-.subtle-dot-pattern {
-  background-image: radial-gradient(rgba(36, 83, 230, 0.12) 1px, transparent 1px);
+/* Technical cyber grid & scanline textures */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+}
+
+.cyber-grid-dense {
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(37, 99, 235, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(37, 99, 235, 0.07) 1px, transparent 1px);
+}
+
+.cyber-radial-overlay {
+  background: radial-gradient(circle at 50% 20%, rgba(0, 240, 255, 0.08) 0%, rgba(5, 8, 17, 0.98) 75%);
+}
+
+.cyber-dots {
+  background-image: radial-gradient(rgba(0, 240, 255, 0.18) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
-/* Card primitives */
-.surface-card {
-  @apply bg-white border border-slate-200 rounded-xl shadow-card transition-all duration-200;
+/* Bento card primitives */
+.bento-card {
+  @apply relative overflow-hidden rounded-2xl bg-cyber-850/90 border border-cyber-border/80 backdrop-blur-xl p-6 sm:p-8 transition-all duration-300;
 }
 
-.surface-card-hover {
-  @apply hover:border-brand-200 hover:shadow-card-hover hover:-translate-y-0.5;
+.bento-card:hover {
+  @apply border-cyber-cyan/50 shadow-2xl shadow-cyan-950/40 -translate-y-1;
+}
+
+/* Cyber card primitives */
+.cyber-card {
+  @apply bg-cyber-800/85 border border-cyber-border rounded-xl backdrop-blur-md shadow-card transition-all duration-200;
+}
+
+.cyber-card-hover {
+  @apply hover:border-cyber-cyan/60 hover:shadow-card-hover hover:-translate-y-0.5;
 }
 
 /* Technical mono badges */
 .tech-badge {
-  @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-mono font-medium bg-slate-100 text-slate-700 border border-slate-200;
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-mono font-medium bg-cyber-900/90 text-cyber-cyan border border-cyber-border/80;
 }
 
-/* Button styles */
-.btn-primary {
-  @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-brand-600 text-white font-semibold text-sm hover:bg-brand-700 active:scale-[0.98] transition-all shadow-sm shadow-brand-600/20;
+.telemetry-badge {
+  @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-cyber-950 border border-cyber-border text-slate-200;
 }
 
-.btn-secondary {
-  @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-white border border-slate-200 text-navy-900 font-semibold text-sm hover:bg-slate-50 hover:border-slate-300 active:scale-[0.98] transition-all;
+/* Cyber buttons with responsive touch-targets */
+.btn-cyber-primary {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-cyber-blue text-white font-semibold text-sm hover:bg-blue-600 active:scale-[0.98] transition-all shadow-lg shadow-blue-600/30 border border-blue-400/40;
 }
 
-/* Custom scrollbar for terminal & code blocks */
+.btn-cyber-secondary {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-cyber-800/90 border border-cyber-border text-slate-200 font-semibold text-sm hover:bg-cyber-700 hover:text-white hover:border-cyber-cyan/50 active:scale-[0.98] transition-all;
+}
+
+.btn-cyber-cyan {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-cyber-cyan text-cyber-950 font-bold text-sm hover:bg-cyan-300 active:scale-[0.98] transition-all shadow-lg shadow-cyber-cyan/25;
+}
+
+.btn-cyber-danger {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-red-600/90 text-white font-semibold text-sm hover:bg-red-500 active:scale-[0.98] transition-all shadow-lg shadow-red-600/30 border border-red-400/40;
+}
+
+/* Glowing text & borders */
+.text-glow-cyan {
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+.text-glow-amber {
+  text-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+}
+
+/* Scrollbars */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #050811;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 3px;
+  background: #1C2A4F;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #00F0FF;
 }

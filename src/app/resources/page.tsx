@@ -1,11 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import { BookOpen, ExternalLink, Compass, ShieldAlert, Award, FileCode } from "lucide-react";
+import { BookOpen, ExternalLink, Compass, ShieldAlert, Award, FileCode, Terminal } from "lucide-react";
 import { DataService } from "@/lib/data-service";
 import { ResourceCategory } from "@/lib/types";
+import { PageHeader } from "@/components/layout/PageHeader";
+import { LearningRoadmap } from "@/components/learning/LearningRoadmap";
 
 export const metadata = {
-  title: "Educational Resources & Security Roadmaps",
+  title: "Educational Resources & Security Roadmaps // NTU Cyber Security Society",
   description: "Curated cybersecurity roadmaps, legal practice labs, CTF platforms, and reference guides for students at NTU.",
 };
 
@@ -21,24 +23,14 @@ export default async function ResourcesPage() {
   ];
 
   return (
-    <div className="bg-background min-h-screen pb-24">
+    <div className="bg-cyber-900 text-slate-100 min-h-screen pb-24 selection:bg-cyber-cyan/20 selection:text-cyber-cyan">
       {/* Header */}
-      <section className="bg-white border-b border-surface-border py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-3">
-            <span className="text-xs font-mono font-medium text-brand-700 uppercase tracking-wider">
-              Student Knowledge Base
-            </span>
-            <h1 className="text-4xl sm:text-5xl font-bold text-charcoal-900 tracking-tight">
-              Curated Cybersecurity Resources
-            </h1>
-            <p className="text-base sm:text-lg text-charcoal-600 leading-relaxed">
-              Vetted roadmaps, legal wargame labs, CTF practice portals, and authoritative documentation 
-              recommended by NTU Cyber Security Society mentors.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        badge="// Student Knowledge Repository"
+        title="Curated Security Resources"
+        description="Vetted roadmaps, legal wargame labs, CTF practice portals, and authoritative documentation recommended by NTU Cyber Security Society mentors."
+        rightBadgeText="KNOWLEDGE BASE SYNCED"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 space-y-16">
         
@@ -48,48 +40,48 @@ export default async function ResourcesPage() {
 
           return (
             <div key={category}>
-              <div className="flex items-center gap-2.5 mb-6 pb-3 border-b border-charcoal-200">
-                <BookOpen className="w-5 h-5 text-brand-700" />
-                <h2 className="text-xl font-bold text-charcoal-900">{category}</h2>
-                <span className="text-xs text-charcoal-500 font-mono">
-                  ({catResources.length})
+              <div className="flex items-center gap-2.5 mb-6 pb-3 border-b border-cyber-border font-mono">
+                <BookOpen className="w-5 h-5 text-cyber-cyan" />
+                <h2 className="text-xl font-bold text-white">{category}</h2>
+                <span className="text-xs text-slate-500">
+                  [{catResources.length}]
                 </span>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {catResources.map((item) => (
-                  <div key={item.id} className="surface-card p-6 surface-card-hover flex flex-col justify-between">
+                  <div key={item.id} className="cyber-card p-6 cyber-card-hover flex flex-col justify-between">
                     <div>
-                      <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center justify-between mb-3 font-mono">
                         <span
-                          className={`px-2 py-0.5 rounded text-[11px] font-mono font-semibold ${
+                          className={`px-2 py-0.5 rounded text-[10px] font-semibold ${
                             item.difficulty_level === "Beginner"
-                              ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                              ? "bg-emerald-950/80 text-emerald-400 border border-emerald-500/30"
                               : item.difficulty_level === "Intermediate"
-                              ? "bg-blue-50 text-blue-700 border border-blue-200"
-                              : "bg-purple-50 text-purple-700 border border-purple-200"
+                              ? "bg-blue-950/80 text-blue-400 border border-blue-500/30"
+                              : "bg-purple-950/80 text-purple-400 border border-purple-500/30"
                           }`}
                         >
                           {item.difficulty_level}
                         </span>
-                        <span className="text-xs text-charcoal-400 font-mono">Verified Resource</span>
+                        <span className="text-[10px] text-slate-500">VERIFIED</span>
                       </div>
 
-                      <h3 className="text-lg font-bold text-charcoal-900 mb-2 leading-snug">
+                      <h3 className="text-lg font-bold text-white mb-2 leading-snug">
                         {item.title}
                       </h3>
 
-                      <p className="text-xs text-charcoal-600 leading-relaxed">
+                      <p className="text-xs text-slate-400 leading-relaxed">
                         {item.description}
                       </p>
                     </div>
 
-                    <div className="pt-5 border-t border-charcoal-100 mt-5">
+                    <div className="pt-5 border-t border-cyber-border mt-5 font-mono">
                       <Link
                         href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-700 hover:text-brand-800"
+                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyber-cyan hover:underline"
                       >
                         <span>Access Resource</span>
                         <ExternalLink className="w-3.5 h-3.5" />
@@ -102,17 +94,22 @@ export default async function ResourcesPage() {
           );
         })}
 
+        {/* Interactive Roadmap */}
+        <div className="pt-6">
+          <LearningRoadmap />
+        </div>
+
         {/* Suggestion Box */}
-        <div className="surface-card p-8 bg-brand-50/50 border-brand-200 text-center max-w-2xl mx-auto">
-          <h3 className="text-base font-bold text-charcoal-900 mb-1">
+        <div className="cyber-card p-8 bg-cyber-850 border-cyber-border text-center max-w-2xl mx-auto">
+          <h3 className="text-base font-bold text-white font-mono mb-1">
             Have a valuable security lab or paper to recommend?
           </h3>
-          <p className="text-xs text-charcoal-600 leading-relaxed mb-4">
-            Society members regularly curate and expand this repository. Submit high-quality tools or tutorial suggestions to the society leads.
+          <p className="text-xs text-slate-400 leading-relaxed mb-4">
+            Society members regularly curate and expand this repository. Submit high-quality tools or tutorial suggestions to society leads.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-charcoal-900 text-white text-xs font-medium hover:bg-brand-700 transition-colors"
+            className="btn-cyber-secondary text-xs font-mono font-semibold"
           >
             <span>Submit Resource Recommendation</span>
           </Link>

@@ -1,16 +1,22 @@
 export type MemberHierarchy = 1 | 2 | 3 | 4 | 5;
+export type SecurityWing = "Executive" | "Red Team" | "Blue Team" | "CTF" | "Advisor";
 
 export interface TeamMember {
   id: string;
   name: string;
   designation: string;
   hierarchy_order: MemberHierarchy; // 1: Advisor, 2: President, 3: Executive, 4: Lead, 5: Member
+  wing?: SecurityWing;
   department: string;
   bio?: string;
   image_url?: string;
   github_url?: string;
   linkedin_url?: string;
   email?: string;
+  skills?: string[];
+  certifications?: string[];
+  tryhackme_url?: string;
+  hackthebox_url?: string;
   is_published: boolean;
   created_at?: string;
 }

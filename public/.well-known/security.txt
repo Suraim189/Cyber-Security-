@@ -1,0 +1,10 @@
+# NTU Cyber Security Society — RFC 9116 Security Contact File
+# https://cyber.ntu.edu.pk/.well-known/security.txt
+
+Contact: mailto:advisor.cyber@ntu.edu.pk
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://cyber.ntu.edu.pk/.well-known/security.txt
+Policy: https://cyber.ntu.edu.pk/security
+Acknowledgments: https://cyber.ntu.edu.pk/security#hall-of-fame
+Hiring: https://cyber.ntu.edu.pk/contact#join

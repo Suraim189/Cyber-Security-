@@ -45,3 +45,33 @@ TASKS SUMMARY
 [T008] [MEDIUM] [DONE] Testing, Polish, Accessibility, SEO & Vercel Deployment Readiness
   - Acceptance Criteria: Type checks pass, production build succeeds, meta tags, sitemap, robots.txt, 404 page, .env.example, setup documentation.
   - Verification: npx tsc --noEmit (0 errors), npm run build (successful prerender of 19 static/dynamic pages), robots.txt & sitemap.xml generated.
+
+[T009] [HIGH] [DONE] Elite Creative Redesign & Interactive Visualizations
+  - Acceptance Criteria: Complete visual & experiential transformation to an elite cybersecurity research lab & student security community. Deep midnight canvas (`#050811`), glowing electric cyan (`#00F0FF`), tactical blue (`#2563EB`), fine cyber grid lines, subtle scanlines, monospaced telemetry badges.
+  - Verification: TypeScript strict check passed (0 errors), Next.js production build cleanly compiled (19/19 routes), and dev server verified live on port 3000 (HTTP 200 OK).
+
+[T010] [CRITICAL] [DONE] 10/10 Award-Level Cyber Upgrade & Security Hardening
+  - Acceptance Criteria:
+    - Interactive 3D Threat Matrix: Three.js interactive particle sphere with simulated attack arcs and WebGL cleanup.
+    - Decrypt/Scramble Headline: Dynamic cyber glyph decryption animation (`ScrambleText`).
+    - Magnetic Buttons: Framer Motion spring physics on CTAs.
+    - Functional Terminal: Real command parser (`help`, `about`, `team`, `events`, `ctf`, `whoami`, `nmap`, `matrix`, `ping`, `sudo`), tab autocomplete, and history up/down arrows.
+    - Live CTF Arena: Server-side SHA-256 flag hashing in `/api/ctf/submit`, rate limiting, first-blood detection, and canvas-confetti celebration.
+    - Event Registration & .ics Calendar: In-app modal replacing broken `forms.gle/sample` links with instant RFC 5545 `.ics` export.
+    - 3D Tilt Team Cards: Wing filters (Red Team, Blue Team, CTF, Executive, Advisor) with photo cards and verified bios.
+    - Animated Count-Up Metrics: IntersectionObserver count-up stats (`AnimatedStats`).
+    - Global UX: Cmd+K / Ctrl+K Command Palette (`CommandPalette`) using `cmdk`.
+    - Enterprise Security Hardening: HSTS, X-Frame-Options (DENY), CSP, Permissions-Policy in `next.config.mjs`, RFC 9116 `/.well-known/security.txt`, and public `/security` VDP page.
+  - Verification: `npx tsc --noEmit` (0 errors), `npm run build` (21/21 routes prerendered), and `http://localhost:3000` (HTTP 200 OK).
+
+[T011] [HIGH] [DONE] Phase 2: Polish & Trust Upgrade
+  - Acceptance Criteria:
+    - Navbar: Text wrapping resolved ("Projects"), compact icon search button with Ctrl+K / ⌘K hint, smaller LAB-ACTIVE badge, one-line logo, glowing scroll progress bar, mobile drawer menu.
+    - Team: Blur-up skeletons and image loading states, replaced repeated footer with real skills tags, certifications (eJPTv2, BTL1, CEH, Security+), TryHackMe/HackTheBox/GitHub links, and stylized fallback avatar (initials + gradient).
+    - Page Headers: Reusable PageHeader with animated radar sweep, telemetry HUD, blips, and tighter vertical spacing across all subpages.
+    - New Sections: Past-events photo gallery with category filter & modal lightbox (EventGallery.tsx), filterable CTF achievements timeline (AchievementsTimeline.tsx), institutional partners/sponsors strip (PartnersStrip.tsx), interactive FAQ accordion (FaqAccordion.tsx), and interactive multi-track learning roadmap with persistent progress (LearningRoadmap.tsx).
+    - Member Features: Public certificate/member verification with QR code (/verify and /verify/[id]), member dashboard with level XP bar, active streaks, unlocked badges, and resource shortcuts (/dashboard).
+    - Readability: Min 14px text (16px for paragraphs), WCAG AA contrast compliant.
+    - Performance: Lazy-loaded Three.js globe with auto-reduced particles (halved on mobile/low-end) and static fallback for prefers-reduced-motion.
+  - Verification: npx tsc --noEmit (0 errors), npm run build (23/23 routes generated), curl verified HTTP 200 across all endpoints.
+
